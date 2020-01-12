@@ -47,7 +47,7 @@ div {
   height: 50px;
   margin-right: 2px;
   background-color: white;
-  animation-name: rotate;
+  animation-name: scaleYY;
   animation-iteration-count: infinite;
   animation-duration: 1s;
   transform-origin: center;
@@ -61,10 +61,9 @@ div {
 .rectangles7{  animation-delay: 0.6s;}
 .rectangles8{  animation-delay: 0.7s;}
 
-@keyframes rotate {
+@keyframes scaleYY {
   0%{transform: scaleY(1);}
   15%{transform: scaleY(2);}
   30% {transform: scaleY(1);}
-  100%{transform: scaleY(1);}
 }
 
