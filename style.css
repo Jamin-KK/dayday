@@ -1,0 +1,35 @@
+/* reset  */
+body,header,h1,h2,p,a {margin: 0; padding: 0;}
+html, body {height: 100%;}
+
+/* body */
+body {background:linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%) no-repeat; font-family: 'Changa One';  color: snow;}
+
+/* container */
+.container {width: 100%; height: 100%; text-align: center;}
+
+/* layout  */
+header{}
+main{}
+
+
+
+
+
+/* contacts */
+h1  {font-size: 15vw; text-transform: uppercase; }
+h2  {text-transform: uppercase; }
+p   {margin-bottom: 10vw; font-size: 3vw;;}
+a   {display: inline-block; margin-bottom: 0vw; font-size: 4vw; line-height: 5.5vw; color:whitesmoke; text-decoration: none; }
+
+
+
+
+
+/* media  */
+@media (max-width: 800px){
+    h1  {margin-top: 2vw; font-size: 10vw; text-transform: uppercase; }
+    p   {margin-bottom: 5vw;}
+    a   {font-size: 3vw; }
+    
+}
