@@ -1,0 +1,13 @@
+<html> <head>  <title> popup test </title>
+    <script language="javascript">
+        function popup() {
+            OpenWindow=window.open("","","height=250,width=250");
+            OpenWindow.document.write("<html><body bgcolor=pink>Hello!");
+            OpenWindow.document.write('<script language="javascript">function doalert() { alert("Got in"); } <\/script>');
+            OpenWindow.document.write("<form><input type='button' value='alert' onclick='doalert()'></form>");
+            OpenWindow.document.write("</body></html>");
+        }
+    </script> </head>
+    <body>
+        <input type="button" onclick='popup()' value="click to see new window">
+    </body></html>

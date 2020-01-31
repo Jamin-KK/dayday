@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DayDay</title>
+    <title>js_02function</title>
 
 
     <!-- style.css  -->
@@ -13,13 +13,13 @@
 
     <!-- meta Data -->
     <meta name="author" content="jj.KK">
-    <meta name="description" content="Experience JavaScript DayDay">
+    <meta name="description" content="Experience JavaScript 02">
     <meta name="keywords" content="HTML5, CSS3, JavaScript,Vanilla javascript">
 
     <!-- Facebook meta tags -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Experience JavaScript DayDay" />
-    <meta property="og:url" content="http://oo0ooo02.dothome.co.kr/dayday/index.html" />
+    <meta property="og:title" content="Experience JavaScript 002" />
+    <meta property="og:url" content="http://oo0ooo02.dothome.co.kr/dayday/js002.html" />
     <meta property="og:image" content="http://oo0ooo02.dothome.co.kr/dayday/img/icon.png" />
     <meta property="og:site_name" content="DayDay" />
     <meta property="og:description" content="JavaScript Study step by step" />
@@ -30,10 +30,9 @@
     <!-- favicon -->
     <link rel="icon" href="img/favicon.ico" type="http://oo0ooo02.dothome.co.kr/dayday/img/favicon.ico"/>
 
-    <!-- style -->
+    <!-- style  -->
     <style>
-        a   {font-size: 4vw; line-height: 5vw;  text-decoration: none; }
-
+    body{background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);}
     </style>
  
 
@@ -45,7 +44,6 @@
 
 
 <body>
-
     <div class="container">
         <header>
          <h1>DayDay</h1>
@@ -53,29 +51,24 @@
         </header>
         <!-- //header -->
         <main>
-            <h2 id="js001" class="popUp"><a href="#">001_consoleLog</a></h2>
-            <h2 id="js002" class="popUp"><a href="#">002_function</a></h2>
-            <h2 id="js003" class="popUp"><a href="#">003_alert</a></h2>
-            <h2 id="js004" class="popUp"><a href="#">004_radome</a></h2>
-            <h2 id="js005" class="popUp"><a href="#">005_if</a></h2>
+            <h2>js_02function</h2>
+            <p>Open the Developer Tools window to see the console.</p>
         </main>
         <!-- //main  -->
     </div>
     <!-- //container  -->
+    
+ 
 
 
-
-
-    <!-- script -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
-    //window popup
-    $(".popUp").click(function() {	
-        let idNum  = this.id.slice(2,6);	
-        let title   = $('#js'+idNum).text();
-        console.log(idNum,title)	
-        window.open('js'+idNum+'.html', title, 'width=800, height=563, left=50, top=50, resize=1, scrollbars=0, toolbar=0, menubar=no');
-        });	
+    
+    function sayHello(){
+    console.log('js_02function');
+    console.log('2019.01.29');
+    }
+
+    sayHello();
     </script>
 
 </body>
