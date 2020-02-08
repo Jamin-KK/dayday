@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js_006_html_select</title>
+
+  <!-- meta Data -->
+  <meta name="author" content="jj.KK">
+  <meta name="description" content="Experience JavaScript 006"> <!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta name="keywords" content="HTML5, CSS3, JavaScript,Vanilla javascript">
+
+  <!-- Facebook meta tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Experience JavaScript 006" /> <!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta property="og:url" content="http://oo0ooo02.dothome.co.kr/dayday/js006.html" /><!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta property="og:image" content="http://oo0ooo02.dothome.co.kr/dayday/img/icon.png" />
+  <meta property="og:site_name" content="DayDay" />
+  <meta property="og:description" content="JavaScript Study step by step" />
+
+  <!-- web font -->
+  <link href="https://fonts.googleapis.com/css?family=Changa+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/94b8e6bbb3.js" crossorigin="anonymous"></script>
+
+  <!-- favicon -->
+  <link rel="icon" href="img/favicon.ico" type="http://oo0ooo02.dothome.co.kr/dayday/img/favicon.ico" />
+
+  <!-- style  -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* style for each #number */
+    body{background-size: cover;}
+
+    a       {line-height: 4vw;}
+
+
+    .main   {display: flex; width: 50vw; height: 25vw ; margin: 0 auto; 
+              background-color: #0000009f;
+              flex-direction: column; align-items: center; justify-content: center;}
+    
+    
+    .select-container__sentence {font-size: 20px;
+
+      color: white;
+      font-weight: 600;
+      font-family: Signika;
+    }
+
+    .select-container__select-box {
+      border: 3px solid #f2f2f2;
+      border-radius: 15px;
+      padding: 2px 5px;
+      margin: 0px 5px;
+      background-color: #3d3d3d9c;
+      color: #f2f2f2;
+      font-family: Signika;
+    }
+
+    select{border: 1px solid #000;}
+  </style>
+
+</head>
+
+
+
+
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <header>
+        <h1>DayDay</h1>
+        <p>Experience JavaScript DayDay</p>
+      </header>
+      <!-- //header -->
+      <main id="main">
+        <h2>js_006_html_select</h2><!-- !!!!!!!!!!!!!!!!!!!!! -->
+        <div class="main">
+          <h3>Where are you from?</h3>
+          <div class="select-container">
+            <span class="select-wrap_txt">
+              I AM FROM
+            </span>
+            <select class="select-container_select-box">
+              <option value="UNSELCETED">WHERE</option>
+              <option value="SU">Seoul</option>
+              <option value="GT">京都</option>
+              <option value="HA">Hội An</option>
+              <option value="BL">Berlin</option>
+            </select>
+          </div>
+        </div>
+      
+      </main>
+      <!-- //main  -->
+      <footer>
+        <a href="https://oo0ooo0.tistory.com/">oo0ooo0.tistory.com</a> ||
+        <a href="iMessage://kkjjajja@gmail.com">iMessage</a>
+      </footer>
+      <!-- footer -->
+    </div>
+  </div>
+  <!-- //container  -->
+
+
+
+
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/randomBg.js"></script>
+  <script>
+
+    // selectors
+    const select = document.querySelector("select"),
+      body = document.querySelector("body");
+
+    // constants
+    const USER_LS = "country",
+      COUNTRY_IMG = {
+        SU:
+          "https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        GT:
+          "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+        HA:
+          "https://images.unsplash.com/photo-1568488834583-c79854c6e6b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80",
+        BL:
+          "https://images.unsplash.com/photo-1475452524438-d6a4a3f6fdc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+      };
+
+ 
+    // functions
+    function imageURL(country) {
+      if (country === "SU") {
+        return COUNTRY_IMG.SU;
+      } else if (country === "GT") {
+        return COUNTRY_IMG.GT;
+      } else if (country === "HA") {
+        return COUNTRY_IMG.HA;
+      } else if (country === "BL") {
+        return COUNTRY_IMG.BL;
+      } else {
+        return null;
+      }
+    }
+
+    function setBackground(country) {
+      if (country === "UNSELCETED") {
+        body.style.backgroundImage = "";
+      } else {
+        body.style.backgroundImage = `url('${imageURL(country)}')`;
+      }
+    }
+
+    function saveCountry(text) {
+      localStorage.setItem(USER_LS, text);
+    }
+
+    function handleChange(event) {
+      event.preventDefault();
+      const currentCountry = event.target.value;
+      saveCountry(currentCountry);
+      setBackground(currentCountry);
+    }
+
+    function askForCountry() {
+      select.addEventListener("change", handleChange);
+    }
+
+    function loadCountry() {
+      const currentCountry = localStorage.getItem(USER_LS);
+      if (currentCountry === null) {
+        askForCountry();
+      } else {
+        select.value = currentCountry;
+        setBackground(currentCountry);
+      }
+    }
+
+    // init function
+    function init() {
+      loadCountry();
+    }
+
+    init();
+    askForCountry();
+  </script>
+</body>
+
+</html>
