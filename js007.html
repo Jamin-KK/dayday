@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js_007_TweenMax</title>
+
+  <!-- meta Data -->
+  <meta name="author" content="jj.KK">
+  <meta name="description" content="Experience JavaScript 007"> <!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta name="keywords" content="HTML5, CSS3, JavaScript,Vanilla javascript">
+
+  <!-- Facebook meta tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Experience JavaScript 006" /> <!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta property="og:url" content="http://oo0ooo02.dothome.co.kr/dayday/js007.html" /><!-- !!!!!!!!!!!!!!!!!!!!! -->
+  <meta property="og:image" content="http://oo0ooo02.dothome.co.kr/dayday/img/icon.png" />
+  <meta property="og:site_name" content="DayDay" />
+  <meta property="og:description" content="JavaScript Study step by step" />
+
+  <!-- web font -->
+  <link href="https://fonts.googleapis.com/css?family=Changa+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/94b8e6bbb3.js" crossorigin="anonymous"></script>
+
+  <!-- favicon -->
+  <link rel="icon" href="img/favicon.ico" type="http://oo0ooo02.dothome.co.kr/dayday/img/favicon.ico" />
+
+  <!-- style  -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+     a       {line-height: 4vw;}
+    .main{position: relative; display: block; width: 60vw; height: 30vw; margin: 0 auto; padding: 2vw; background-color: #fff;}
+    .btn{display:inline-block; padding: 1vw; font-size: 2vw; background-color:#c1c1c1; }
+    .box{position:relative;top:0;left:0;width:3vw;height:3vw}
+    .box1{background-color:#5e54ed}
+
+    /* 트윈맥스의 .from() 메소드를 사용한다면 최종적으로 보여지게 되는 박스의 형태를 css로 미리 지정해 주면 됩니다. */    
+ 
+  </style>
+
+</head>
+
+
+
+
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <header>
+        <h1>DayDay</h1>
+        <p>Experience JavaScript DayDay</p>
+      </header>
+      <!-- //header -->
+      <main id="main">
+        <h2>js_007_TweenMax</h2><!-- !!!!!!!!!!!!!!!!!!!!! -->
+        <div class="main">
+          <a href="#" class="btn">Move!Move!</a>
+          <h4>TimelineLite</h4>
+          <div class="box box1"></div>
+        </div>
+      
+      </main>
+      <!-- //main  -->
+      <footer>
+        <a href="https://oo0ooo0.tistory.com/">oo0ooo0.tistory.com</a> ||
+        <a href="iMessage://kkjjajja@gmail.com">iMessage</a>
+      </footer>
+      <!-- footer -->
+    </div>
+  </div>
+  <!-- //container  -->
+
+
+
+
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="js/randomBg.js"></script>
+  
+  <script>
+    var $btnMove = $(".btn"),
+    $tweenBox = $(".box1");
+
+    var myBox = new TimelineLite()
+
+    $btnMove.on('click',function(e){
+      e.preventDefault();
+      myBox.to($tweenBox, 2, {width:90, height:90})
+      .to($tweenBox, 1, {left:300})
+      .to($tweenBox, 1, {backgroundColor:"#52e252"})
+
+})
+  
+  </script>
+</body>
+
+</html>
