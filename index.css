@@ -1,0 +1,65 @@
+/* reset  */
+body,header,h1,h2,p,a,ul,li {margin: 0; padding: 0;}
+html, body  {height: 100%;}
+ul, li      {list-style: none;}
+a           {font-size: inherit; color:whitesmoke; text-decoration: none; }
+
+
+
+
+/* body */
+body        {background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);}
+
+
+/* container */
+.wrap  { position: relative; width: 80%; height: 100%;  margin: 0 auto; font-family: 'Changa One';  color: snow; 
+}
+.row {overflow: hidden; width: 100%; margin: 0 auto; padding: 0 1vw; text-align: center; box-sizing: border-box;}
+.container{}
+
+
+/* layout  */
+#header  { padding-bottom: 5vw;}
+main    {width: 100%;}
+footer  {width: 100%; font-size: 2vw; }
+
+
+
+
+
+
+/*header.*/
+ #header h1  {font-size: 20vw; text-transform: uppercase; padding-top: 5vw;}
+ #header p   {font-size: 2vw;}
+	
+
+/*index_main*/
+.indexMain 		{}
+.indexMain ul 	{ -moz-column-count: 3; -webkit-column-count: 3; column-count: 3;}
+.indexMain li 	{display: block;}
+.indexMain li a {display: inline-block; font-size: 2vw; line-height: 2vw; color:whitesmoke; text-decoration: none; transition: color 0.2s ease;}
+.indexMain li a:hover {color:rgba(245, 245, 245, 0.623);}
+
+
+
+
+/*main*/
+/* h2  {font-size: 5vw; text-transform: uppercase; }
+a   {display: inline-block; font-size: inherit; color:whitesmoke; text-decoration: none; }
+mark{text-decoration: underline;} */
+
+
+
+
+/* media  */
+@media (max-width: 1290px){
+    .container {width: 100%;}
+     }
+    
+/* 
+@media (max-width: 800px){
+    h1  {padding-top: 3vw; font-size: 10vw; text-transform: uppercase; }
+    /* p   {margin-bottom: 5vw;} */
+    a   {font-size: 3vw; }
+    
+} */
